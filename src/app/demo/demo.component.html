@@ -1,0 +1,22 @@
+
+
+
+
+<div style="text-align: center;">
+    <form class="form" [formGroup]="dynamicForm" (ngSubmit)="Submit(dynamicForm)">
+
+        <div *ngFor="let group of rowArray.controls; let i = index;" formArrayName="row">
+            <div [formGroupName]='i' class="form-group row" >
+                <input type="text" placeholder="category" value="" formControlName="category" class="col-2 form-control" >
+                <input type="text" placeholder="Subcategory" value="" formControlName="Subcategory" class="col-2 form-control">
+                <input type="text" placeholder="Units" value="" formControlName="Units" class="col-2 form-control">
+                <button type="button" (click)="removeAddress(i)" class="btn btn-danger col-1">remove</button>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-6"></div>
+            <button type="button" class="btn btn-success col-1" (click)="addRow()">Add </button>
+            <button type="submit" class="btn btn-primary col-1" (click)="addRow()">submit </button>
+        </div>
+    </form>
+</div>
