@@ -25,7 +25,7 @@ export class DemoComponent implements OnInit {
   addRow(): void {
     if (this.rowArray.valid) {
       this.rowArray.push(this.addRowGroup());
-      console.log(this.rowArray);
+      // console.log(this.rowArray);
     }
   }
 
